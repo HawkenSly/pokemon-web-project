@@ -2,9 +2,9 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 40px;
     grid-row-gap: 0px;
-    }
+    column-gap: 5%;
+}
 
 
 .container {
@@ -13,7 +13,8 @@
 }
 
 .capsule {
-    width: clamp(200px, 50%, 600px);
+    min-width: 70px;
+    max-width: 350px;
     height: 300px;
     min-height: 200px;
     background-color: cyan;

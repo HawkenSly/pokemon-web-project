@@ -1,24 +1,26 @@
-import './App.css'; 
-import PokemonCapsule from './Capsule'
+import './App.css';
+import PokemonGrid from './PokemonGrid'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
-async function getGeneration(gen) {
-  let response = await fetch(`https://pokeapi.co/api/v2/pokedex/${gen}`);
-  let data = await response.json()
-  return data;
-}
-
-getGeneration('kanto').then(data => console.log(data));
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Pokemon App</h1>
-        <div>
-          <PokemonCapsule/>
-        </div>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <header className="App-header">
+          <h1>Pokemon App</h1>
+          <div>
+
+          </div>
+          <div>
+            <PokemonGrid />
+          </div>
+        </header>
+      </div>
+      <ReactQueryDevtools initialIsOpen={true} position='bottom-right' />
+    </QueryClientProvider>
   );
 }
 
