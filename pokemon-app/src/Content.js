@@ -4,8 +4,7 @@ import { useState } from 'react'
 import { useQuery } from 'react-query'
 import pokeball from './pokeball.svg'
 import PokemonGrid from './PokemonGrid'
-import Favorites from './Favorites'
-
+import { updateFavorites, Favorites } from './favorites';
 
 
 function getPokemonFromGeneration(gen) {
@@ -46,12 +45,7 @@ function getPokemonFromGeneration(gen) {
             end = 1010;
             break;
         case 10:
-            let promises = [];
-            for (let i = 0; i > Favorites.length; i++) {
-                const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-                promises.push(fetch(url).then((response) => response.json()));
-            }
-            return Promise.all(promises);
+            break;
         default:
             break;
     }
@@ -98,6 +92,7 @@ export default function Content() {
                 <button className="genbuttons" onClick={() => setGeneration(7)}>Gen 7</button>
                 <button className="genbuttons" onClick={() => setGeneration(8)}>Gen 8</button>
                 <button className="genbuttons" onClick={() => setGeneration(9)}>Gen 9</button>
+                
             </div>
             <PokemonGrid pokemonGeneration={data} />
         </>

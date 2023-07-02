@@ -8,6 +8,59 @@
 }
 
 .genbuttons {
-    max-height: 300px;
+    height: 5vh;
+    max-height: 200px;
     font-size: .6em;
+}
+
+.gen1 {
+    background: linear-gradient(
+    to right,
+    #cb5a5a 0%,
+    #cb5a5a 50%,
+    #4e4e97 50%,
+    #4e4e97 100%
+  );
+}
+
+.gen2 {
+    background: linear-gradient(
+    to right,
+    gold 0%,
+    gold 50%,
+    silver 50%,
+    silver 100%
+  );
+}
+
+.gen3 {
+    background-color: green;
+}
+
+.gen4 {
+    background-color: #d8cef9;
+}
+
+.gen5 {
+    background-color: cyan;
+}
+
+.gen6 {
+    background-color: purple;
+}
+
+.gen7 {
+    background-color: orange;
+}
+
+.gen8 {
+    background-color: yellow;
+}
+
+.gen9 {
+    background-color: brown;
+}
+
+.genfav {
+    background-color: pink;
 }
