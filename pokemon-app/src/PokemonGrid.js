@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import './colors.css';
-import './Capsule.css'
-import Capsule from './Capsule'
+import Capsule from './Capsule';
 import * as React from 'react';
 
 

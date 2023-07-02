@@ -6,7 +6,6 @@ import PokemonGrid from './PokemonGrid'
 
 
 function getPokemonFromGeneration(gen) {
-    const generationPokemon = [];
     let start = 1;
     let end = 151;
 
@@ -59,7 +58,7 @@ function getPokemonFromGeneration(gen) {
 
 
 export default function Content() {
-    let generation = 9;
+    let generation = 2;
 
     const { data, status } = useQuery(['pokemon', generation], () =>
         getPokemonFromGeneration(generation)
