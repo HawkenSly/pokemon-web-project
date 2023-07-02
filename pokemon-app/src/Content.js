@@ -1,7 +1,8 @@
-import * as React from 'react';
-import { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
-import pokeball from './pokeball.svg';
+import * as React from 'react'
+import "./generations.css"
+import { useState } from 'react'
+import { useQuery } from 'react-query'
+import pokeball from './pokeball.svg'
 import PokemonGrid from './PokemonGrid'
 
 
@@ -56,9 +57,8 @@ function getPokemonFromGeneration(gen) {
 }
 
 
-
 export default function Content() {
-    let generation = 2;
+    const [generation, setGeneration] = useState(1);
 
     const { data, status } = useQuery(['pokemon', generation], () =>
         getPokemonFromGeneration(generation)
@@ -77,5 +77,22 @@ export default function Content() {
         return <h2>Error :c</h2>;
     }
 
-    return <PokemonGrid pokemonGeneration={data} />;
+    return (
+        <>
+            <div className="generationgrid">
+                <button className="genbuttons" onClick={() => setGeneration(1)}>Gen 1</button>
+                <button className="genbuttons" onClick={() => setGeneration(2)}>Gen 2</button>
+                <button className="genbuttons" onClick={() => setGeneration(3)}>Gen 3</button>
+                <button className="genbuttons" onClick={() => setGeneration(4)}>Gen 4</button>
+                <button className="genbuttons" onClick={() => setGeneration(5)}>Gen 5</button>
+                <button className="genbuttons" onClick={() => setGeneration(6)}>Gen 6</button>
+                <button className="genbuttons" onClick={() => setGeneration(7)}>Gen 7</button>
+                <button className="genbuttons" onClick={() => setGeneration(8)}>Gen 8</button>
+                <button className="genbuttons" onClick={() => setGeneration(9)}>Gen 9</button>
+            </div>
+            <PokemonGrid pokemonGeneration={data} />
+        </>
+    );
 }
+
+//            <button onClick={() => setGeneration(2)}>Hi</button>

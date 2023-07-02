@@ -1,4 +1,4 @@
-import './App.css';
+import './app.css'
 import Content from './Content'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
