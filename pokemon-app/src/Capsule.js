@@ -2,6 +2,9 @@ import './colors.css';
 import './capsule.css'
 import TypeBadge from './TypingBadges';
 import * as React from 'react';
+import Favorites from './Favorites'
+import { useState } from 'react'
+
 
 
 export default function Capsule({ pokemon }) {
